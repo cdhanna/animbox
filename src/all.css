@@ -1,10 +1,50 @@
-div {
-  color: red;
-}
-h1 {
-  color: green;
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
 }
 
-div {
+
+frames .frames-container {
+  white-space: nowrap;
+  overflow-x: auto;
+  position: relative;
+  padding: 2px;
+}
+frames .frames-container .frame-selector {
+  top: 0px;
+  left: 0px;
+  min-width: 19px;
+  min-height: 44px;
+  background-color: #37c1ff;
+  display: inline-block;
+  position: absolute;
+  z-index: 0;
+  transition: left 0.1s ease-out;
+}
+frames .frames-container .frame {
+  min-width: 15px;
+  min-height: 40px;
+  background-color: #99b4ce;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+frames .frames-container .frame:not(:first-child) {
+  margin-left: 4px;
+}
+frames .frames-container .frame .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  bottom: 5px;
+  left: 2.5px;
+  border-radius: 5px;
+}
+frames .frames-container .frame:hover .dot {
   background-color: blue;
 }

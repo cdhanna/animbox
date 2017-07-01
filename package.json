@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular": "^1.6.4",
     "electron": "^1.6.11",
     "electron-connect": "^0.6.1",
     "gulp": "^3.9.1",

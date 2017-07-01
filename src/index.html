@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="animbox" ng-controller="mainCtrl">
   <head>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="all.css">
 
-    <title>Hello World!</title>
+    <title> {{title}} </title>
   </head>
-  <body>
-    <h1>Animate Box</h1>
+  <body >
+
+    <div ng-cloak> 
+        <h1> {{title}} </h1>
+
+        <frames> </frames>
+    </div> 
   
   
+    <!-- Dev Included -->
     <script>require('electron-connect').client.create()</script>
+
+    <!-- Third Party -->
+    <script src="../node_modules/angular/angular.js"> </script>
+
+    <!-- Src -->
+    <script src="app.js"> </script>
+    <script src="directives/frames/frames.dir.js"> </script>
   </body>
 </html>

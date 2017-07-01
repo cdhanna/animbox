@@ -1,0 +1,58 @@
+@import 'theme.less';
+
+frames {
+
+    .frames-container {
+
+        white-space: nowrap;
+        overflow-x: auto;
+
+        position: relative;
+
+        padding: 2px;
+
+
+        .frame-selector {
+            top: 0px;
+            left: 0px;
+            min-width: 19px;
+            min-height: 44px;
+            background-color:@selected;
+            display: inline-block;
+            position: absolute;
+            z-index: 0;
+
+            transition: left .1s ease-out;
+        }
+
+        .frame {
+            min-width: 15px;
+            min-height: 40px;
+            background-color: @passive;
+            display: inline-block;
+            position:  relative;
+            z-index: 1;
+            &:not(:first-child){
+                margin-left: 4px;
+            } 
+
+            .dot {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: white;
+                bottom: 5px;
+                left: 2.5px;
+                border-radius: 5px;
+            }
+
+            &:hover {
+                .dot {
+                    background-color: blue;
+                }
+            }
+        }
+
+    }
+
+} 

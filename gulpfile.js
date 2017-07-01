@@ -35,7 +35,7 @@ g.task('dev', function(){
     gElectron.start()
 
     // g.watch(['src/index.html'], gElectron.reload)
-    g.watch('src/**/*.{js,less,html}', function(){
+    g.watch('src/**/*.*{js,less,html}', function(){
         g.start('css')
         gElectron.reload()
     })
