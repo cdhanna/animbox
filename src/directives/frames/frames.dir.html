@@ -3,13 +3,21 @@
     <div class="frames-container">
 
         <div class="frame"
-            ng-repeat="frame in getFrames()">
+            ng-repeat="frame in getFrames()"
+            ng-style="getFrameStyle(frame)">
 
+            {{frame}}
             <span class="dot"> </span>
 
         </div>
         <div class="frame-selector"> 
         </div>
+    </div>
+
+    <div class="onion-container">
+        <span class="arrow-up left-arrow"> </span>
+        <span class="arrow-line"> </span>
+        <span class="arrow-up right-arrow"> </span>
     </div>
 
 

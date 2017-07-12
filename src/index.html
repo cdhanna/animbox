@@ -10,9 +10,17 @@
   <body >
 
     <div ng-cloak> 
-        <h1> {{title}} </h1>
-
+        <h1> {{title}} {{getName()}} </h1>
+        <button ng-click="prevFrame()"> Prev </button>
+        <button ng-click="nextFrame()"> Next </button>
+        <button ng-click="onionLeft(1)"> LeftOnion+ </button>
+        <button ng-click="onionLeft(-1)"> LeftOnion- </button>
+        <button ng-click="onionRight(1)"> RightOnion+ </button>
+        <button ng-click="onionRight(-1)"> RightOnion- </button>
+        <button ng-mousedown="windowLeftStart(1)" ng-mouseup="windowLeftStop()"> Left+ </button>
+        <button ng-mousedown="windowLeftStart(-1)"  ng-mouseup="windowLeftStop()"> Left- </button>
         <frames> </frames>
+        <content> <content>
     </div> 
   
   
@@ -22,8 +30,25 @@
     <!-- Third Party -->
     <script src="../node_modules/angular/angular.js"> </script>
 
-    <!-- Src -->
+    <!-- Typing -->
+    <script src="types/Frame.js"> </script> 
+    <script src="types/Project.js"> </script> 
+    <script src="types/Workspace.js"> </script> 
+    <script src="types/Window.js"> </script> 
+
+    <!-- Components -->
     <script src="app.js"> </script>
+    <script src="services/frame.srvc.js"> </script>
+    <script src="services/onion.srvc.js"> </script>
+    <script src="services/workspace.srvc.js"> </script>
+    <script src="services/window.srvc.js"> </script>
+    <script src="services/event.srvc.js"> </script>
+    <script src="services/input.srvc.js"> </script>
+    <script src="services/picture.srvc.js"> </script>
+    <script src="services/keyboard.srvc.js"> </script>
     <script src="directives/frames/frames.dir.js"> </script>
+    <script src="directives/content/content.dir.js"> </script>
+
+
   </body>
 </html>

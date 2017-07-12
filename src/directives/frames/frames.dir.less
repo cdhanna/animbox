@@ -1,20 +1,70 @@
 @import 'theme.less';
 
 frames {
+    display: block;
+
+
+    .onion-container {
+        position: relative;
+        height: 40px;
+
+        .arrow-up {
+            border-bottom: solid 7px #99b4ce;
+            border-left: solid 7px transparent;
+            border-right: solid 7px transparent;
+
+            position: absolute;
+            transition: left .1s ease-out, transform .1s ease-out;
+            
+            &.rotate-left {
+                transform: rotate(-90deg);
+                top: 6px;
+            }
+            &.rotate-right {
+                transform: rotate(90deg);
+                top: 6px;
+            }
+        }
+        .arrow-line {
+            border-bottom: solid 3px #99b4ce;
+            border-left: solid 3px #99b4ce;
+            border-right: solid 3px #99b4ce;
+            width: 20px;
+            position: absolute;
+            top: 7px;
+            height: 2px;
+            transition: all .1s ease-out;
+
+            &.rotate-left {
+                border-left: solid 3px transparent;
+            }
+            &.rotate-right {
+                border-right: solid 3px transparent;
+            }
+            &.hide {
+                opacity: 0;
+            }
+        }
+        .left-arrow {
+        }
+    }
 
     .frames-container {
 
         white-space: nowrap;
-        overflow-x: auto;
+        overflow-x: hidden;
 
         position: relative;
 
-        padding: 2px;
+        // padding: 2px;
+        height: 44px;
+        background-color: gray;
 
+        
 
         .frame-selector {
-            top: 0px;
-            left: 0px;
+            // top: 2px;
+            left: 2px;
             min-width: 19px;
             min-height: 44px;
             background-color:@selected;
@@ -26,14 +76,23 @@ frames {
         }
 
         .frame {
-            min-width: 15px;
+            top: 2px;
+            // left: 2px; 
+            width: 15px;
+            overflow-x: hidden;
+
+
             min-height: 40px;
             background-color: @passive;
             display: inline-block;
-            position:  relative;
+            transition: left .1s ease-out;
+            
+            // position:  relative;
+            position: absolute;
+
             z-index: 1;
             &:not(:first-child){
-                margin-left: 4px;
+                // margin-left: 4px;
             } 
 
             .dot {

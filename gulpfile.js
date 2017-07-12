@@ -31,12 +31,20 @@ g.task('build', ['clean', 'css'], function(){
 
 })
 
+g.task('run', ['css'], function(){
+    gElectron.start();
+
+})
+
 g.task('dev', function(){
+    
+    g.start('css')
+    
     gElectron.start()
 
-    // g.watch(['src/index.html'], gElectron.reload)
     g.watch('src/**/*.*{js,less,html}', function(){
         g.start('css')
         gElectron.reload()
     })
+    
 })

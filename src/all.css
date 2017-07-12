@@ -8,15 +8,67 @@
 }
 
 
+content {
+  display: block;
+}
+content .content {
+  outline: solid 8px transparent;
+  transition: outline 0.5s ease-out;
+  width: calc(14.66666667in);
+  height: calc(11.33333333in);
+  outline: solid 8px blue;
+}
+
+frames {
+  display: block;
+}
+frames .onion-container {
+  position: relative;
+  height: 40px;
+}
+frames .onion-container .arrow-up {
+  border-bottom: solid 7px #99b4ce;
+  border-left: solid 7px transparent;
+  border-right: solid 7px transparent;
+  position: absolute;
+  transition: left 0.1s ease-out, transform 0.1s ease-out;
+}
+frames .onion-container .arrow-up.rotate-left {
+  transform: rotate(-90deg);
+  top: 6px;
+}
+frames .onion-container .arrow-up.rotate-right {
+  transform: rotate(90deg);
+  top: 6px;
+}
+frames .onion-container .arrow-line {
+  border-bottom: solid 3px #99b4ce;
+  border-left: solid 3px #99b4ce;
+  border-right: solid 3px #99b4ce;
+  width: 20px;
+  position: absolute;
+  top: 7px;
+  height: 2px;
+  transition: all 0.1s ease-out;
+}
+frames .onion-container .arrow-line.rotate-left {
+  border-left: solid 3px transparent;
+}
+frames .onion-container .arrow-line.rotate-right {
+  border-right: solid 3px transparent;
+}
+frames .onion-container .arrow-line.hide {
+  opacity: 0;
+}
 frames .frames-container {
   white-space: nowrap;
-  overflow-x: auto;
+  overflow-x: hidden;
   position: relative;
-  padding: 2px;
+  height: 44px;
+  background-color: gray;
 }
 frames .frames-container .frame-selector {
-  top: 0px;
-  left: 0px;
+  left: 2px;
   min-width: 19px;
   min-height: 44px;
   background-color: #37c1ff;
@@ -26,15 +78,15 @@ frames .frames-container .frame-selector {
   transition: left 0.1s ease-out;
 }
 frames .frames-container .frame {
-  min-width: 15px;
+  top: 2px;
+  width: 15px;
+  overflow-x: hidden;
   min-height: 40px;
   background-color: #99b4ce;
   display: inline-block;
-  position: relative;
+  transition: left 0.1s ease-out;
+  position: absolute;
   z-index: 1;
-}
-frames .frames-container .frame:not(:first-child) {
-  margin-left: 4px;
 }
 frames .frames-container .frame .dot {
   position: absolute;
