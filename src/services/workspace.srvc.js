@@ -23,7 +23,7 @@ app.service('workspaceSrvc', [
 
         }
 
-        self.loadProject(__dirname + '/../data/workspace1')
+        self.loadProject(__dirname + '/../data/workspace2')
 
         return self;
     }

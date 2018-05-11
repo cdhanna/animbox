@@ -45,12 +45,20 @@ app.service('frameSrvc', [
             if (index == undefined){
                 index = selectedIndex;
             }
-            index = index % 3;
+            index = index % 10;
             var filename = 'frame_' + pad(index + 1, 4) + '.bmp';
             var filepath =  workspaceSrvc.getCurrent().path + '/' + filename;
         
             return filepath;
-        }
+        };
+
+        self.getFrameContentRange = function(startIndex, endIndex){
+            var frames = [];
+            for (var i = startIndex ; i < endIndex; i ++){
+                frames.push(self.getFrameContent(i));
+            }
+            return frames;
+        };
 
         function pad(n, width, z) {
             z = z || '0';

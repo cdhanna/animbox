@@ -157,7 +157,7 @@ app.directive('frames', [
                     }
                     var onion = elem[0].querySelector('.arrow-line');
                     
-                    console.log(leftIndex, rightIndex)
+                    //console.log(leftIndex, rightIndex)
                     onion.classList.toggle('hide', rightIndex == leftIndex)
                     
                     

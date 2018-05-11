@@ -27,7 +27,7 @@ app.service('windowSrvc', [
         }
 
         self.readWindow = function(name){
-
+ 
         }
 
         self.changeLeft = function(change, name){
